@@ -22,8 +22,14 @@ export class CommunicationService {
         return {
           fullName: rst.fullName,
           name: data.name,
-          lastName: data.lastName
+          lastName: data.lastName,
+          suma: rst.suma
         };
+      }),
+      map((rst: any) => {
+        console.log(JSON.stringify(rst, null, '\t'));
+        rst.last = true;
+        return rst;
       }),
       map((rst: any) => {
         console.log(JSON.stringify(rst, null, '\t'));
