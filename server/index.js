@@ -17,6 +17,8 @@ const server = http.createServer((req, res) => {
                 rst = {
                     fullName: `${obj.name} ${obj.lastName}`
                 }
+            } else if ('/nueva_ruta') {
+
             }
             else {
                 res.writeHead(501, { 'Content-Type': 'text/html' });

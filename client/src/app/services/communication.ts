@@ -25,7 +25,6 @@ export class CommunicationService {
           lastName: data.lastName
         };
       }),
-      delay(10000),
       map((rst: any) => {
         console.log(JSON.stringify(rst, null, '\t'));
         rst.last = true;
