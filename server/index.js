@@ -17,8 +17,11 @@ const server = http.createServer((req, res) => {
                 rst = {
                     fullName: `${obj.name} ${obj.lastName}`
                 }
-            } else if ('/nueva_ruta') {
-
+            } else if(route === '/comp2'){
+                console.log('COMPONENTE 2');
+                rst = {
+                    fullName: `${obj.name} ${obj.lastName}`
+                }
             }
             else {
                 res.writeHead(501, { 'Content-Type': 'text/html' });
