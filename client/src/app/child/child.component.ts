@@ -16,7 +16,7 @@ export class ChildComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.send('', this.send).subscribe(rst => {
+    this.http.send('child', this.send).subscribe(rst => {
       this.result = rst;
     });
   }

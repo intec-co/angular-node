@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 export class Data {
@@ -12,15 +12,24 @@ export class Data {
   providedIn: 'root'
 })
 export class CommunicationService {
+
   constructor(private http: HttpClient) { }
+
   send(url: string, data: Data): Observable<any> {
-    return this.http.post(`/comm/url`, data).pipe(
+    return this.http.post(`/comm/${url}`, data).pipe(
       map((rst: any) => {
+        console.log(rst);
         return {
           fullName: rst.fullName,
           name: data.name,
           lastName: data.lastName
         };
+      }),
+      delay(10000),
+      map((rst: any) => {
+        console.log(JSON.stringify(rst, null, '\t'));
+        rst.last = true;
+        return rst;
       })
     );
   }
