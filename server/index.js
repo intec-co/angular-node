@@ -24,6 +24,11 @@ const server = http.createServer((req, res) => {
                     
                 }           
 
+            } else if(route === '/comp2'){
+                console.log('COMPONENTE 2');
+                rst = {
+                    fullName: `${obj.name} ${obj.lastName}`
+                }
             }
             else {
                 res.writeHead(501, { 'Content-Type': 'text/html' });

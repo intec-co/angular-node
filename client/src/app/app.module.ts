@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 
 import { ChildComponent } from './child/child.component';
 import { Comp3Component } from './comp3/comp3.component';
+import { Comp2Component } from './comp2/comp2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildComponent,
-    Comp3Component
+    Comp3Component,
+    Comp2Component
   ],
   imports: [
     BrowserModule,
