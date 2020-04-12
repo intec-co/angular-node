@@ -24,6 +24,11 @@ const server = http.createServer((req, res) => {
                     
                 }           
 
+            } else if (route ==='/comp1') {
+                rst = {
+                    fullName: `${obj.name} ${obj.lastName}`,
+                    suma: 5+3
+                }
             } else if(route === '/comp2'){
                 console.log('COMPONENTE 2');
                 rst = {

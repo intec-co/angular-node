@@ -128,6 +128,6 @@
   },
   "defaultProject": "angular",
   "cli": {
-    "analytics": "e0eabfad-a8f3-41d1-8aa7-6cbd3566b3fd"
+    "analytics": false
   }
 }
