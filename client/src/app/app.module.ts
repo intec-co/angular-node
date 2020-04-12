@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ChildComponent } from './child/child.component';
+import { Comp3Component } from './comp3/comp3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    Comp3Component
   ],
   imports: [
     BrowserModule,

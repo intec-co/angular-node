@@ -8,6 +8,11 @@ export class Data {
   lastName: string;
 }
 
+export class DataComp3{
+  a: number;
+  b: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +34,18 @@ export class CommunicationService {
         console.log(JSON.stringify(rst, null, '\t'));
         rst.last = true;
         return rst;
+      })
+    );
+  }
+  sendComp3(url: string, data: DataComp3): Observable<any> {
+    return this.http.post(`/comm/${url}`, data).pipe(
+      map((rst: any) => {
+        console.log(rst);
+        return {
+          a: data.a,
+          b: data.b,
+          Suma: rst.sum
+        };
       })
     );
   }
